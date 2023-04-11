@@ -1,0 +1,66 @@
+﻿[
+  {
+    "Nome": "Attack on Titan",
+    "Sinopse": "Sinopse: A humanidade sobrevive em paz por 100 anos dentro das muralhas Maria, Rose e Sina. Eren Jaeger e Mikasa Ackerman, juntamente com seus pais, vivem pacificamente no Distrito de Shiganshina, contudo, essa paz logo seria abalada por um evento que mudaria suas vidas para sempre.",
+    "Genero": ["Ação, Drama, Suspense"],
+    "Duracao": "603 minutos",
+    "Classificacao": "18+",
+    "Imagem":"\\img\\anime1.jpg"
+  },
+  {
+    "Nome": "Naruto Shippuden",
+    "Sinopse": "A história acontece ao redor de um Naruto mais velho e um pouco mais maduro e sua jornada para salvar seu amigo Uchiha Sasuke das garras do Ninja Orochimaru. Após dois anos e meio, Naruto finalmente retorna para a Vila de Konoha, e começa a por suas ambições em prática, contudo não será tão fácil, já que ele conquistou alguns inimigos poderosos, como a organização ninja, Akatsuki.",
+    "Genero": ["Ação, Comédia, Drama, Fantasia "],
+    "Duracao": "736 minutos",
+    "Classificacao": "14+",
+    "Imagem":"\\img\\anime2.jpg"
+  },
+  {
+    "Nome": "A Voz do Silêncio: Koe no Katachi",
+    "Sinopse": "A história segue um jovem chamado Shoya Ishida, que, quando criança, praticava bullying com sua colega de classe surda, Shoko Nishimiya. Anos depois, arrependido pelo que fez, Shoya tenta se redimir e fazer amizade com Shoko.",
+    "Genero": ["Anime, Drama, Romance"],
+    "Duracao": "130 minutos",
+    "Classificacao": "14+",
+    "Imagem":"\\img\\anime3.jpg"
+  },
+  {
+    "Nome": "Your Name",
+    "Sinopse": "A história segue a vida de dois adolescentes, Mitsuha Miyamizu e Taki Tachibana, que nunca se conheceram, mas começam a trocar de corpo magicamente durante o sono. Ao longo do filme, eles tentam descobrir a verdade por trás de sua conexão misteriosa e lidar com as consequências emocionais de sua situação.",
+    "Genero": ["Anime, Fantasia, Drama, Romance"],
+    "Duracao": "106 minutos",
+    "Classificacao": "13+",
+    "Imagem":"\\img\\anime4.jpg"
+  },
+  {
+    "Nome": "O Tempo com você ",
+    "Sinopse": "A história gira em torno de um estudante do ensino médio chamado Hodaka Morishima, que foge de sua casa na ilha e vai para Tóquio, onde conhece uma garota misteriosa chamada Hina Amano. Hina possui um poder extraordinário de controlar o clima, o que leva Hodaka a se aproximar dela em busca de ajuda para acabar com a chuva incessante que assola a cidade de Tóquio.",
+    "Genero": ["Anime, Fantasia, Drama, Romance"],
+    "Duracao": "112 minutos",
+    "Classificacao": "12+",
+    "Imagem":"\\img\\anime5.jpg"
+  },
+  {
+    "Nome": "O Castelo Animado",
+    "Sinopse": "Uma jovem que trabalha em uma chapelaria e é amaldiçoada por uma bruxa que a transforma em uma velha mulher. Para quebrar a maldição, Sophie procura abrigo no castelo móvel do mago Howl, onde conhece uma série de personagens cativantes e se envolve em uma batalha épica contra uma força misteriosa que ameaça o reino.",
+    "Genero": ["Anime, Fantasia, Drama, Romance"],
+    "Duracao": "119 minutos",
+    "Classificacao": "L",
+    "Imagem":"\\img\\anime6.jpg"
+  },
+  {
+    "Nome": "Olhos de gato",
+    "Sinopse": "A história gira em torno de uma garota chamada Miyo Sasaki, que está secretamente apaixonada por seu colega de classe, Kento Hinode. Desesperada para chamar a atenção dele, Miyo compra uma máscara mágica que a transforma em um gato. Ao se transformar em um gato, Miyo se aproxima de Kento, mas sua obsessão por ele começa a afetar sua vida como humana.",
+    "Genero": ["Anime, Fantasia, Drama, Romance"],
+    "Duracao": "104 minutos",
+    "Classificacao": "L",
+    "Imagem":"\\img\\anime7.jpg"
+  },
+  {
+    "Nome": "A Viagem de Chihiro",
+    "Sinopse": "O filme conta a história de uma garota chamada Chihiro, que se vê presa em um mundo mágico após seus pais serem transformados em porcos. Para conseguir salvar a si mesma e aos seus pais, Chihiro deve trabalhar em um banho termal para espíritos, onde conhece uma variedade de personagens estranhos e fantásticos.",
+    "Genero": ["Anime, Fantasia, Drama, Aventura, Comédia"],
+    "Duracao": "125 minutos",
+    "Classificacao": "L",
+    "Imagem":"\\img\\anime8.jpg"
+  }
+]
