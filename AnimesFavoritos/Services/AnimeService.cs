@@ -1,82 +1,90 @@
 using System.Text.Json;
-using Animes.Models;
+using AnimesFavoritos.Models;
 
-namespace Pokedex.Services;
-public class AnimeService : IanimesService
+namespace AnimesFavoritos.Services
 {
-    public readonly IHttpContextAccessor _session;
-    public readonly string AnimesFile = @"Data\Animes.json";
-    public readonly string GeneroFile = @"Data\Genero.json";
-    public AnimesService(IHttpContextAccessor session)
-{
-    _session = session;
-    PopularSessao();
-}
-    public List<anime> GetAnimes()
+public class AnimeService : IAnimesService
+
     {
+        public readonly IHttpContextAccessor _session;
+        public readonly string AnimesFile = @"Data\Animes.json";
+        public readonly string GeneroFile = @"Data\Genero.json";
+
+        public AnimeService(IHttpContextAccessor session)
+        {
+            _session = session;
+            PopularSessao();
+        }
+
+        public List<Anime> GetAnimes()
         {
             PopularSessao();
-            var animes = JsonSerializer.Deserialize<List<Anime>>
-            (_session.HttpContext.Session.GetString("Animes"));
-            return Animes;
+            var animes = JsonSerializer.Deserialize<List<Anime>>(_session.HttpContext.Session.GetString("Animes"));
+            return animes;
         }
-    }
 
-    public List<Genero> GetGeneros()
-{
-PopularSessao();
-var tipos = JsonSerializer.Deserialize<List<Tipo>>
-(_session.HttpContext.Session.GetString("Tipos"));
-return tipos;
-}
-public Pokemon GetPokemon(int Numero)
-{
-var pokemons = GetPokemons();
-return pokemons.Where(p => p.Numero == Numero).FirstOrDefault();
-}
-public AnimesDto GetPokedexDto()
-{
-    var pokes = new PokedexDto()
-{
-    Pokemons = GetPokemons(),
-    Tipos = GetTipos()
-};
-return pokes;
-}public DetailsDto GetDetailedAnime(int Numero)
-{
-    var Animes = GetAnimes();
-    var poke = new DetailsDto()
-{
-    Current = Animes.Where(p => p.Numero == Numero)
-    .FirstOrDefault(),
-    Prior = Animes.OrderByDescending(p => p.Numero)
-    .FirstOrDefault(p => p.Numero < Numero),
-    Next = Animes.OrderBy(p => p.Numero)
-    .FirstOrDefault(p => p.Numero > Numero),
-    };
-    return poke;
-}
-public Genero GetGenero(string Nome)
-{
-    var Genero = GetGenero();
-    return Genero.Where(t => t.Nome == Nome).FirstOrDefault();
-}
-private void PopularSessao()
-{
-    if (string.IsNullOrEmpty(_session.HttpContext.Session.GetString("Genero")))
-    {
-    _session.HttpContext.Session
-    .SetString("Animes", LerArquivo(AnimesFile));
-    _session.HttpContext.Session
-    .SetString("Genero", LerArquivo(GeneroFile));
-    }
-}
-private string LerArquivo(string fileName)
-{
-    using (StreamReader leitor = new StreamReader(fileName))
-    {
-    string dados = leitor.ReadToEnd();
-    return dados;
+        public List<Genero> GetGeneros()
+        {
+            PopularSessao();
+            var tipos = JsonSerializer.Deserialize<List<Genero>>(_session.HttpContext.Session.GetString("Genero"));
+            return tipos;
+        }
+
+        public Anime GetAnime(string nome)
+        {
+        var animes = GetAnimes();
+        return animes.FirstOrDefault(p => p.Nome == nome);
+        }
+
+        public AnimesDto GetAnimesDto()
+        {
+            var animes = new AnimesDto()
+            {
+                Animes = GetAnimes(),
+                Generos = GetGeneros()
+            };
+            return animes;
+        }
+
+        public DetailsDto GetDetailedAnime(string nome)
+        {       
+        var animes = GetAnimes();
+        var generos = GetGeneros();
+        var detalhes = new DetailsDto()
+        {
+        Current = animes.FirstOrDefault(p => p.Nome == nome),
+        Prior = animes.OrderByDescending(p => p.Nome)
+                      .FirstOrDefault(p => string.Compare(p.Nome, nome) < 0),
+        Next = animes.OrderBy(p => p.Nome)
+                    .FirstOrDefault(p => string.Compare(p.Nome, nome) > 0),
+        Genero = generos.FirstOrDefault(g => g.Id == genero.GeneroId)
+        };
+        return detalhes;
+        }
+
+
+        public Genero GetGenero(string Nome)
+        {
+            var generos = GetGeneros();
+            return generos.Where(t => t.Nome == Nome).FirstOrDefault();
+        }
+
+        private void PopularSessao()
+        {
+            if (string.IsNullOrEmpty(_session.HttpContext.Session.GetString("Genero")))
+            {
+                _session.HttpContext.Session.SetString("Animes", LerArquivo(AnimesFile));
+                _session.HttpContext.Session.SetString("Genero", LerArquivo(GeneroFile));
+            }
+        }
+
+        private string LerArquivo(string fileName)
+        {
+            using (StreamReader leitor = new StreamReader(fileName))
+            {
+                string dados = leitor.ReadToEnd();
+                return dados;
+            }
         }
     }
 }

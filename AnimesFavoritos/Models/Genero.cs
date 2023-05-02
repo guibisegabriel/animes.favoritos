@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 
 namespace AnimesFavoritos.Models
 {
+    
     public class Genero
     {
-        public string Nome { get; set; }
+    public int Id { get; set; }
+    public string Nome { get; set; }
+
+
     }
 }

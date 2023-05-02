@@ -3,6 +3,7 @@ namespace AnimesFavoritos.Models
     public class Anime
     {
         public string Nome { get; set; }
+        public int Numero { get; set; }
         public string Sinopse { get; set; }
         public List<string> Genero{ get; set; }
         public string Duracao { get; set; }
