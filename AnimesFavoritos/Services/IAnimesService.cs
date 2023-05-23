@@ -9,4 +9,5 @@ public interface IAnimesService
       AnimesDto GetAnimesDto();
       DetailsDto GetDetailedAnimes(string Nome);
       Genero GetGenero(string Genero);
+    object GetDetailedAnimes(int numero);
 }

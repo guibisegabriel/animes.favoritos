@@ -57,7 +57,6 @@ public class AnimeService : IAnimesService
                       .FirstOrDefault(p => string.Compare(p.Nome, nome) < 0),
         Next = animes.OrderBy(p => p.Nome)
                     .FirstOrDefault(p => string.Compare(p.Nome, nome) > 0),
-        Genero = generos.FirstOrDefault(g => g.Id == genero.GeneroId)
         };
         return detalhes;
         }
@@ -85,6 +84,16 @@ public class AnimeService : IAnimesService
                 string dados = leitor.ReadToEnd();
                 return dados;
             }
+        }
+
+        public DetailsDto GetDetailedAnimes(string Nome)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetDetailedAnimes(int numero)
+        {
+            throw new NotImplementedException();
         }
     }
 }
